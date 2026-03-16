@@ -1,0 +1,18 @@
+# Runtime dependencies — installed via npm install
+node_modules/
+
+# Local configuration — contains credentials, never commit
+config.js
+service-account-key.json
+.env
+
+# Runtime output — generated on each run
+logs/
+debug/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
