@@ -1,0 +1,23 @@
+{
+  "name": "aurion-gcal",
+  "version": "1.0.0",
+  "description": "Synchronises the Aurion ENAC timetable to Google Calendar via ICS export",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "setup-oauth": "node scripts/oauth-setup.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "googleapis":                    "^140.0.0",
+    "node-fetch":                    "^2.7.0",
+    "node-ical":                     "^0.19.0",
+    "puppeteer":                     "^22.0.0",
+    "puppeteer-extra":               "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "socks-proxy-agent":             "^8.0.2"
+  },
+  "license": "MIT"
+}
