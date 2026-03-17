@@ -11,7 +11,7 @@
 // Aurion credentials
 // ---------------------------------------------------------------------------
 
-const aurionUrl = 'https://aurion-prod.enac.fr/faces/Login.xhtml';
+const aurionUrl = 'site_de_connexoin.xhtml'; // POur l'ENAC c'est l'url finissant par .../faces/login.xhtml
 const username  = 'firstname.lastname@enac.fr';
 const password  = 'your_password';
 
