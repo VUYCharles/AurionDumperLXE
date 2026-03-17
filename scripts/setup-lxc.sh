@@ -128,7 +128,7 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 WorkingDirectory=${INSTALL_DIR}
-ExecStart=${NODE_BIN} ${INSTALL_DIR}/main.js
+ExecStart=/bin/bash -c "${NODE_BIN} ${INSTALL_DIR}/main.js && ${NODE_BIN} ${INSTALL_DIR}/consolidate.js"
 StandardOutput=append:${INSTALL_DIR}/logs/sync.log
 StandardError=append:${INSTALL_DIR}/logs/sync.log
 ${DOTENV_LOAD}

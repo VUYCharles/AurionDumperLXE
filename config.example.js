@@ -76,6 +76,12 @@ const torPort = 9050;
 
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Consolidation (consolidate.js)
+// ---------------------------------------------------------------------------
+const consolidatedCalendarId  = 'id2'; // ID de l'agenda de destination
+const consolidationGapMinutes = 20;    // seuil de fusion en minutes
+
 module.exports = {
   aurionUrl,
   username,
@@ -86,4 +92,6 @@ module.exports = {
   oauth2Credentials,
   useTor,
   torPort,
+  consolidatedCalendarId,
+  consolidationGapMinutes,
 };
