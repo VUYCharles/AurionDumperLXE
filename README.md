@@ -1,28 +1,28 @@
-# aurion-gcal
+# x-gcal
 
-Exporte l'emploi du temps Aurion ENAC vers un fichier `.ics` ou synchronise automatiquement Google Agenda.
+Exporte l'emploi du temps x x vers un fichier `.ics` ou synchronise automatiquement Google Agenda.
 
 ---
 
 ## Export rapide (aucune configuration)
 
 ```bash
-git clone https://github.com/your-username/aurion-gcal
-cd aurion-gcal
+git clone https://github.com/your-username/x-gcal
+cd x-gcal
 npm install
 node export-ics.js
 ```
 
 ```
-Aurion username (email) : prenom.nom@enac.fr
-Aurion password         : **************
+x username (email) : prenom.nom@enac.fr
+x password         : **************
 Weeks to export   [17]  : 17
 
   12-2026 ... 19 event(s)
   13-2026 ... 21 event(s)
   ...
 
-147 event(s) exported to aurion-2026-03-17.ics
+147 event(s) exported to x-2026-03-17.ics
 ```
 
 Importez le fichier `.ics` dans votre agenda :
@@ -55,10 +55,10 @@ Sans ça, Chromium ne peut pas s'exécuter dans le conteneur.
 
 ```bash
 # Depuis votre machine
-scp aurion-gcal.zip root@<IP_LXC>:/opt/
+scp x-gcal.zip root@<IP_LXC>:/opt/
 
 # Sur le LXC
-cd /opt && apt install -y unzip && unzip aurion-gcal.zip && cd aurion-gcal
+cd /opt && apt install -y unzip && unzip x-gcal.zip && cd x-gcal
 bash scripts/setup-lxc.sh
 ```
 
@@ -95,7 +95,7 @@ nano config.js
 ```
 
 ```js
-const aurionUrl            = 'https://aurion-prod.enac.fr/faces/Login.xhtml';
+const xurl            = 'https://x-prod.enac.fr/faces/Login.xhtml';
 const username             = 'prenom.nom@enac.fr';
 const password             = 'votre_mot_de_passe';
 const weeksToScrape        = 17;               // ~4 mois
@@ -113,17 +113,17 @@ node main.js
 ### 6. Activer la sync automatique
 
 ```bash
-systemctl start aurion-gcal.timer
-systemctl status aurion-gcal.timer  # vérifie la prochaine exécution
+systemctl start x-gcal.timer
+systemctl status x-gcal.timer  # vérifie la prochaine exécution
 tail -f logs/sync.log               # suit les logs en temps réel
 ```
 
 La sync tourne tous les jours à 4h. Pour changer l'heure :
 
 ```bash
-nano /etc/systemd/system/aurion-gcal.timer
+nano /etc/systemd/system/x-gcal.timer
 # OnCalendar=*-*-* 06:00:00
-systemctl daemon-reload && systemctl restart aurion-gcal.timer
+systemctl daemon-reload && systemctl restart x-gcal.timer
 ```
 
 ### 7. Consolidation (optionnel)
